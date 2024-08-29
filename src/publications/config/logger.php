@@ -10,9 +10,9 @@ return [
 
     "log_format"      => env("YR_LOGGER_LOG_FORMAT", "[%datetime%] %level%: %message%"),
     "log_format_json" => [
-        "datetime",
-        "level",
-        "message",
+        "%datetime%",
+        "%level%",
+        "%message%",
     ],
 
     "base_directory"   => env("YR_LOGGER_BASE_DIRECTORY", storage_path("logs")),
