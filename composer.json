@@ -3,7 +3,7 @@
     "description": "Logger for Laravel",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "autoload": {
         "psr-4": {
             "YukataRm\\Laravel\\Logger\\": "src"
@@ -29,6 +29,7 @@
     "require": {
         "php": ">=8.2.0",
         "laravel/framework": "^11.0",
+        "yukata-roommate/laravel-provider": "^1.0.0",
         "yukata-roommate/logger": "^1.0.0"
     },
     "minimum-stability": "dev"

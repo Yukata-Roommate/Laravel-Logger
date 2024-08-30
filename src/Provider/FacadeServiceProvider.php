@@ -2,7 +2,7 @@
 
 namespace YukataRm\Laravel\Logger\Provider;
 
-use Illuminate\Support\ServiceProvider;
+use YukataRm\Laravel\Provider\FacadeServiceProvider as BaseServiceProvider;
 
 use YukataRm\Laravel\Logger\Facade\Manager;
 use YukataRm\Laravel\Logger\Facade\Logger;
@@ -12,17 +12,17 @@ use YukataRm\Laravel\Logger\Facade\Logger;
  * 
  * @package YukataRm\Laravel\Logger\Provider
  */
-class FacadeServiceProvider extends ServiceProvider
+class FacadeServiceProvider extends BaseServiceProvider
 {
     /**
-     * register Facade
+     * get facades
      * 
-     * @return void
+     * @return array<string, string>
      */
-    public function register(): void
+    protected function facades(): array
     {
-        $this->app->singleton(Logger::class, function () {
-            return new Manager();
-        });
+        return [
+            Logger::class => Manager::class
+        ];
     }
 }
