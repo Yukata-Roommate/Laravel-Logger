@@ -96,7 +96,7 @@ trait Env
     {
         if (!function_exists("config")) return parent::envFileNameFormat();
 
-        return $this->config("file_name_format", parent::envFileNameFormat());
+        return $this->config("file.name_format", parent::envFileNameFormat());
     }
 
     /**
@@ -109,7 +109,46 @@ trait Env
     {
         if (!function_exists("config")) return parent::envFileExtension();
 
-        return $this->config("file_extension", parent::envFileExtension());
+        return $this->config("file.extension", parent::envFileExtension());
+    }
+
+    /**
+     * get env file mode
+     * 
+     * @return int
+     */
+    #[\Override]
+    protected function envFileMode(): int
+    {
+        if (!function_exists("config")) return parent::envFileMode();
+
+        return $this->config("file.mode", parent::envFileMode());
+    }
+
+    /**
+     * get env file owner
+     * 
+     * @return string|null
+     */
+    #[\Override]
+    protected function envFileOwner(): string|null
+    {
+        if (!function_exists("config")) return parent::envFileOwner();
+
+        return $this->config("file.owner", parent::envFileOwner());
+    }
+
+    /**
+     * get env file group
+     * 
+     * @return string|null
+     */
+    #[\Override]
+    protected function envFileGroup(): string|null
+    {
+        if (!function_exists("config")) return parent::envFileGroup();
+
+        return $this->config("file.group", parent::envFileGroup());
     }
 
     /**
