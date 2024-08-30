@@ -15,8 +15,8 @@ return [
         "%message%",
     ],
 
-    "base_directory"   => env("YR_LOGGER_BASE_DIRECTORY", storage_path("logs")),
-    "file"             => [
+    "base_directory" => env("YR_LOGGER_BASE_DIRECTORY", storage_path("logs")),
+    "file"           => [
         "name_format" => env("YR_LOGGER_FILE_NAME_FORMAT", "Y-m-d"),
         "extension"   => env("YR_LOGGER_FILE_EXTENSION", "log"),
         "mode"        => env("YR_LOGGER_FILE_MODE", 0666),
